@@ -1,0 +1,28 @@
+monitoring:
+  interval: 60  # seconds
+  metrics:
+    - cpu
+    - memory
+    - network
+  thresholds:
+    cpu: 80.0
+    memory: 85.0
+    network: 70.0
+  network_interfaces:
+    - eth0
+    - wlan0
+
+logging:
+  level: INFO
+  file: network_agent.log
+  rotation: 1 day
+  retention: 7 days
+
+anomaly_detection:
+  window_size: 60  # number of samples for anomaly detection
+  sensitivity: 1.5  # standard deviations for anomaly threshold
+
+automated_resolution:
+  enabled: true
+  max_retries: 3
+  cooldown_period: 300  # seconds between resolution attempts 
