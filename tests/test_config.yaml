@@ -1,0 +1,28 @@
+monitoring:
+  interval: 5  # shorter interval for testing
+  metrics:
+    - cpu
+    - memory
+    - network
+  thresholds:
+    cpu: 80.0
+    memory: 85.0
+    network: 70.0
+  network_interfaces:
+    - eth0
+    - wlan0
+
+logging:
+  level: DEBUG  # more verbose logging for testing
+  file: test_network_agent.log
+  rotation: 1 day
+  retention: 1 days
+
+anomaly_detection:
+  window_size: 10  # smaller window for testing
+  sensitivity: 1.5
+
+automated_resolution:
+  enabled: true
+  max_retries: 2
+  cooldown_period: 30  # shorter cooldown for testing 
